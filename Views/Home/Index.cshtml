@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h1><a href='@Url.Action("SelectPaquete")'>Crear Paquete</a></h1>
+
+@foreach (string id in ViewBag.paquetes.Keys)
+{
+    <p>@id: @ViewBag.paquetes[id].Hotel, @ViewBag.paquetes[id].Aereo, @ViewBag.paquetes[id].Excursion</p>
+}

@@ -1,0 +1,25 @@
+<p>
+    <form method="post" action='@Url.Action("GuardarPaquete")'>
+        <select name="destino">
+            @for(int i=0; i<ViewBag.destinos.Count; i++){
+                <option>@ViewBag.destinos[i]</option>
+            }
+        </select>
+
+        <h1>Hotel:</h1>
+        @for(int i=0; i<ViewBag.hoteles.Count; i++){
+                <input type="radio" name="hotel" value="imagen"><img src="~/img/hoteles/@ViewBag.hoteles[i]" width="10%" height="auto">
+            }
+
+        <h1>Aereo:</h1>
+         @for(int i=0; i<ViewBag.aereos.Count; i++){
+                <input type="radio" name="aereo" value="imagen"><img src="~/img/aereos/@ViewBag.aereos[i]" width="10%" height="auto">
+            }
+
+        <h1>Excursion:</h1>
+         @for(int i=0; i<ViewBag.excursiones.Count; i++){
+                <input type="radio" name="excursion" value="imagen"><img src="~/img/excursiones/@ViewBag.excursiones[i]" width="10%" height="auto">
+            }
+        <input type="submit" value="Enviar paquete">
+    </form>
+</p>
