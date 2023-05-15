@@ -6,5 +6,10 @@
 
 @foreach (string id in ViewBag.paquetes.Keys)
 {
-    <p>@id: @ViewBag.paquetes[id].Hotel, @ViewBag.paquetes[id].Aereo, @ViewBag.paquetes[id].Excursion</p>
+    <div>
+        <h2>@id:</h2> 
+        <img src="~/img/hoteles/@ViewBag.paquetes[id].Hotel" width="10%" height="auto">
+        <img src="~/img/aereos/@ViewBag.paquetes[id].Aereo" width="10%" height="auto">
+        <img src="~/img/excursiones/@ViewBag.paquetes[id].Excursion" width="10%" height="auto">
+    </div>
 }

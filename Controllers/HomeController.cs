@@ -11,22 +11,28 @@ public class HomeController : Controller
     }
 
     public IActionResult SelectPaquete(){
+        CargarListas();
+        return View();
+    }
+
+    public IActionResult GuardarPaquete(int destino, int hotel, int aereo, int excursion){
+        if(destino == 0 || hotel == 0 || aereo == 0 || excursion == 0){
+            ViewBag.MensajeError = "ERROR. Datos Faltantes";
+            CargarListas();
+            return View("SelectPaquete");
+        }
+        else{
+            ORTWorld.IngresarPaquete(ORTWorld.ListaDestinos[destino-1], new Paquete(ORTWorld.ListaHoteles[hotel-1], ORTWorld.ListaAereos[aereo-1], ORTWorld.ListaExcursiones[excursion-1]));
+            ViewBag.paquetes = ORTWorld.Paquetes;
+            return View("Index");
+        }
+        
+    }
+
+    public void CargarListas(){
         ViewBag.destinos = ORTWorld.ListaDestinos;
         ViewBag.hoteles = ORTWorld.ListaHoteles;
         ViewBag.aereos = ORTWorld.ListaAereos;
         ViewBag.excursiones = ORTWorld.ListaExcursiones;
-        return View();
-    }
-
-    public IActionResult GuardarPaquete (int Destino, int Hotel, int Aereo, int Excursion){
-        if(Destino == 0 || Hotel == 0 || Aereo == 0 || Excursion == 0){
-            ViewBag.MensajeError = "ERROR. Datos Faltantes";
-            return View("SelectPaquete");
-        }
-        else{
-            ORTWorld.IngresarPaquete(ORTWorld.ListaDestinos[Destino-1], new Paquete(ORTWorld.ListaHoteles[Hotel-1], ORTWorld.ListaAereos[Aereo-1], ORTWorld.ListaExcursiones[Excursion-1]));
-        }
-        ViewBag.paquetes = ORTWorld.Paquetes;
-        return View("Index");
     }
 }
