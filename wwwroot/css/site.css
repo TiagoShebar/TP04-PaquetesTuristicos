@@ -10,8 +10,10 @@ html {
   }
 }
 
+
 body {
   margin: 20px 60px 0px 20px;
+  background-color: beige;
 }
 
 footer {
@@ -20,11 +22,106 @@ footer {
   margin: 10px 0px 20px 0px;
 }
 
-img {
-  width: 200px;
-  height: 200px;
+
+.selectPaquete {
+  margin-bottom: 50px;
 }
 
-div {
-  margin-bottom: 50px;
+label img{
+  width: 200px;
+  height: 200px;
+  margin-left: 2%;
+  margin-bottom: 2%;
+  margin-right: 1%;
+  transition: 1s all ease;
+}
+
+label img:hover {
+  width: 275px;
+  height: 250px;
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.backgroundId {
+  background-color: rgb(151, 147, 147);
+}
+
+select {
+  width: 200px; 
+  height: 70px;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+.input-hidden:checked + label>img {
+  border: 1px solid #fff;
+  box-shadow: 0 0 3px 3px #090;
+  transform: 
+    rotateZ(-10deg) 
+    rotateX(10deg);
+}
+
+.input-hidden + label>img {
+  border: 1px #444;
+  transition: 500ms all;
+}
+
+.except {
+  width: 180px; 
+  height: 60px;
+  font-size: 18px;
+  position: relative;
+  background-color: yellow;
+  margin-bottom: 60px;
+}
+
+.home {
+  border: 2px solid black;
+  width: 25%;
+  background-color: white;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.home img{
+  width: 130px;
+  height: 130px;
+  float: left;
+  margin-left: 10px;
+}
+
+.home p{
+  font-size: 20px;
+  float: bottom;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.home h2{
+  text-align: center;
+}
+
+.imagen-container{
+  display: inline-block;
+}
+
+h3 {
+  color: red;
 }

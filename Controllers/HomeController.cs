@@ -16,6 +16,7 @@ public class HomeController : Controller
     }
 
     public IActionResult GuardarPaquete(int destino, int hotel, int aereo, int excursion){
+        Console.WriteLine("L" + destino + hotel + aereo + excursion);
         if(destino == 0 || hotel == 0 || aereo == 0 || excursion == 0){
             ViewBag.MensajeError = "ERROR. Datos Faltantes";
             CargarListas();
@@ -23,8 +24,7 @@ public class HomeController : Controller
         }
         else{
             ORTWorld.IngresarPaquete(ORTWorld.ListaDestinos[destino-1], new Paquete(ORTWorld.ListaHoteles[hotel-1], ORTWorld.ListaAereos[aereo-1], ORTWorld.ListaExcursiones[excursion-1]));
-            ViewBag.paquetes = ORTWorld.Paquetes;
-            return View("Index");
+            return RedirectToAction("Index");
         }
         
     }
