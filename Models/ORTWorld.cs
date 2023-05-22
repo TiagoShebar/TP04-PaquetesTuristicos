@@ -17,4 +17,10 @@ class ORTWorld {
         }
         return seAgrega;
     }
+
+    public static void BorrarPaquete(string destino){
+        if(Paquetes.ContainsKey(destino)){
+            Paquetes.Remove(destino);
+        }
+    }
 }

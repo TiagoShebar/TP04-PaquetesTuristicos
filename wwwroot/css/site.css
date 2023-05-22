@@ -37,8 +37,8 @@ label img{
 }
 
 label img:hover {
-  width: 275px;
-  height: 250px;
+  width: 270px;
+  height: 235px;
 }
 
 p {
@@ -104,13 +104,17 @@ select {
   width: 130px;
   height: 130px;
   float: left;
-  margin-left: 10px;
+  margin-left: 6.5px;
+  margin-right: 6px;
+  padding: 1px;
 }
 
 .home p{
   font-size: 20px;
   float: bottom;
-  margin-left: 10px;
+  margin-left: 6.5px;
+  margin-right: 6px;
+  padding: 1px;
   text-align: center;
 }
 
@@ -124,4 +128,33 @@ select {
 
 h3 {
   color: red;
+}
+
+.paquete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.paquete img {
+  width: 10%;
+  height: auto;
+  margin-bottom: 2%;
+}
+
+.contenedor-simbolo {
+  width: 0 auto;
+  text-align: center;
+}
+.simbolo {
+  width: 8%;
+  height: auto;
+  transition: 0.5s all ease;
+  margin-bottom: 2%;
+} 
+
+.simbolo:hover{
+  width: 10%;
+  height: auto;
 }

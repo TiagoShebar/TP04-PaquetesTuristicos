@@ -29,6 +29,11 @@ public class HomeController : Controller
         
     }
 
+    public IActionResult BorrarPaquete(string destino){
+        ORTWorld.BorrarPaquete(destino);
+        return RedirectToAction("Index");
+    }
+
     public void CargarListas(){
         ViewBag.destinos = ORTWorld.ListaDestinos;
         ViewBag.hoteles = ORTWorld.ListaHoteles;

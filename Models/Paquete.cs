@@ -7,5 +7,5 @@ class Paquete {
         Hotel = hotel;
         Aereo = aereo;
         Excursion = excursion;
-    } 
+    }
 }
